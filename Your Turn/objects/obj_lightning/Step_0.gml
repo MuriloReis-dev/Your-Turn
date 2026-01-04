@@ -1,16 +1,20 @@
-global.timer += delta_time
+timer += delta_time
+
+
+if (timer >= timer_value + 3_000_000 && !audio_played)
+{
+	audio_play_sound(sound, 0, false)
+	audio_played = true
+}
 
 
 if (image_index >= last_frame)
+{
+	image_index = last_frame
 	image_speed = 0
-else if (global.timer >= timer_value)
+	if (timer >= timer_value + 3_000_000)
+		event_perform(ev_create, 0)
+}
+else if (timer >= timer_value)
 	image_speed = 1
 
-
-if (global.timer >= timer_value + 3_000_000)
-{
-	global.timer = 0
-	audio_play_sound(sound, 0, false)
-	instance_create_layer(x, y, "Instances", obj_lightning)
-	instance_destroy()
-}
