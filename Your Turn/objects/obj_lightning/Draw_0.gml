@@ -1,5 +1,3 @@
-draw_text(100, 100, $"{timer}/{timer_value}")
-
 draw_sprite_ext(
 	sprite_index,
 	-1,
@@ -11,3 +9,4 @@ draw_sprite_ext(
 	color,
 	1)
 
+//draw_text(100, 100, $"{timer}/{timer_value}")

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_draw_animation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_draw_animation",
+  "parent":{
+    "name":"GameScripts",
+    "path":"folders/Scripts/GameScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

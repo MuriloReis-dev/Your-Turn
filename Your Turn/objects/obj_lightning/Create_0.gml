@@ -1,4 +1,3 @@
-
 timer_value = random_range(10_000_000, 30_000_000) // entre 10 e 100 segundos
 timer = 0
 
