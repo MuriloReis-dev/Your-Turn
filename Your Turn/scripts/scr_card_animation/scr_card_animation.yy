@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_card_animation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_card_animation",
+  "parent":{
+    "name":"GameScripts",
+    "path":"folders/Scripts/GameScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

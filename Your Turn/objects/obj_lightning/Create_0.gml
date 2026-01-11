@@ -1,4 +1,4 @@
-timer_value = random_range(10_000_000, 30_000_000) // entre 10 e 100 segundos
+timer_value = random_range(30_000_000, 60_000_000) // entre 30 e 60 segundos
 timer = 0
 
 audio_played = false
@@ -20,4 +20,4 @@ switch (lightning_force)
 image_index = 0
 image_speed = 0
 
-depth = -1000
+depth = -100

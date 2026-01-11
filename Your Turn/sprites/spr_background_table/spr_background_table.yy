@@ -19,7 +19,6 @@
   "height":1080,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"afa5d006-64c7-4b1a-a81e-92738aedef71","blendMode":0,"displayName":"shado","isLocked":false,"name":"afa5d006-64c7-4b1a-a81e-92738aedef71","opacity":30.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"10c8380d-e45c-4cf2-b148-7319cfe798a8","blendMode":0,"displayName":"default","isLocked":false,"name":"10c8380d-e45c-4cf2-b148-7319cfe798a8","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_background_table",
