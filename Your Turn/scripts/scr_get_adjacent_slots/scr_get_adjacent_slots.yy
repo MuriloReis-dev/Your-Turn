@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_get_adjacent_slots",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_get_adjacent_slots",
+  "parent":{
+    "name":"GameScripts",
+    "path":"folders/Scripts/GameScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

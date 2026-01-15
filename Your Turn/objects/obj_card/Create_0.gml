@@ -10,7 +10,8 @@
 	== Outros ==
 	info: struct com informações da carta
 */
-inst_id = save_instance(global.instances)
+
+inst_id = save_instance(global.draggable_instances)
 
 info = info ?? {cost: 0, life: 0, attack: 0}
 
@@ -20,9 +21,13 @@ life = info.life
 attack = info.attack
 
 card_pos = card_pos ?? {x_pos: x, y_pos: x}
+angle_start = image_angle
 
 // ANIMAÇÂO
 target_x = target_x ?? x
 target_y = target_y ?? y
+target_rot = target_rot ?? image_angle
 
 dragging = false
+
+in_action = false

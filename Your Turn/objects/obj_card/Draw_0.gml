@@ -36,14 +36,23 @@ image_index = frame
 draw_self()
 
 if (on_slot)
-	draw_sprite(spr_card_shadow, 0, x, y)
+	draw_sprite_ext(
+		spr_card_shadow,
+		0,
+		x,
+		y,
+		image_xscale,
+		image_yscale,
+		image_angle,
+		image_blend,
+		image_alpha)
 
 #region Texto
 if (frame != 0)
 {
 	draw_sprite_ext(
 		spr_numbers,
-		cost,
+		max(0, cost),
 		energy_spot_x,
 		energy_spot_y,
 		image_xscale,
@@ -54,7 +63,7 @@ if (frame != 0)
 
 	draw_sprite_ext(
 		spr_numbers,
-		life,
+		max(0, life),
 		life_spot_x,
 		life_spot_y,
 		image_xscale,
@@ -65,7 +74,7 @@ if (frame != 0)
 
 	draw_sprite_ext(
 		spr_numbers,
-		attack,
+		max(0, attack),
 		attack_spot_x,
 		attack_spot_y,
 		image_xscale,
@@ -75,3 +84,5 @@ if (frame != 0)
 		image_alpha)
 }
 #endregion
+
+//draw_text(x, y - 200, id)
