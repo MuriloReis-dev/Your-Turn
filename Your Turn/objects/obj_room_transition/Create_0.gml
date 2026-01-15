@@ -1,3 +1,5 @@
+global.lock_controls = true
+
 if (reverse)
 	image_index = image_number - 1
 

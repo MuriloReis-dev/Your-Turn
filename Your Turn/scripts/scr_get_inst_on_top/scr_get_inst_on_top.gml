@@ -1,5 +1,5 @@
-///@description Pega a instância com a menor depth sob o ponteiro do mouse
-///@param type Tipo da instância a ser encontrada
+/// @description Pega a instância com a menor depth sob o ponteiro do mouse
+/// @param type Tipo da instância a ser encontrada
 function get_inst_on_top(type)
 {
 	var inst = noone

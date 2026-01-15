@@ -9,7 +9,7 @@ global.deck = {x_pos: 2010, y_pos: 540}
 global.player_hand = []
 global.opponent_hand = []
 
-global.resolving = false
+global.lock_controls = true // bloqueia controles
 
 #endregion
 
@@ -34,7 +34,6 @@ for (var row = 0; row < board_length[0]; row++)
 		
 		global.board[row][col] = inst
 	}
-	
 }
 
 
@@ -47,6 +46,8 @@ var opponent_hand_pos = {x_pos: 165, y_pos: 150}
 xspacing = 90
 yspacing = 0
 
+var fila = ds_queue_create()
+
 for (var i = 0; i < hand_length[0]; i ++)
 {
 	var card_x = player_hand_pos.x_pos +  i * xspacing
@@ -54,7 +55,7 @@ for (var i = 0; i < hand_length[0]; i ++)
 	
 	var card_info = {cost: irandom_range(1, 4), life: 5, attack: irandom_range(1, 3)}
 	
-	ds_queue_enqueue(global.action_queue, Action_draw_card(global.player_hand,
+	ds_queue_enqueue(fila, new Action_draw_card(global.player_hand,
 		{info: card_info,
 		owner: obj_player,
 		card_pos: {x_pos: card_x, y_pos: card_y},
@@ -71,7 +72,7 @@ for (var i = 0; i < hand_length[0]; i ++)
 	
 	var card_info = {cost: irandom_range(1, 4), life: 5, attack: irandom_range(1, 3)}
 		
-	ds_queue_enqueue(global.action_queue, Action_draw_card(global.opponent_hand,
+	ds_queue_enqueue(fila, new Action_draw_card(global.opponent_hand,
 		{info: card_info,
 		owner: obj_opponent,
 		card_pos: {x_pos: card_x, y_pos: card_y},
@@ -80,5 +81,11 @@ for (var i = 0; i < hand_length[0]; i ++)
 		target_y: card_y,
 		target_rot: 0}))
 }
+
+// desbloqueia controles ao comprar todas as cartas
+ds_queue_enqueue(fila, create_action(function(){ global.lock_controls = false }))
+
+// inicia fila de ações
+array_push(global.action_groups, new Action_group(fila))
 
 #endregion

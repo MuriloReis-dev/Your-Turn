@@ -1,55 +1,64 @@
-function Action_attack(_card, _target, _angle)
+/// @description Ação de ataque para uma carta
+/// @param _card Carta que executa o ataque
+/// @param _target Carta que recebe o ataque
+/// @param _angle Ângulo de inclinação da carta
+function Action_attack(_card, _target, _angle) constructor
 {
-	return {
-		card: _card,
-		target: _target,
-		angle: _angle,
+	// Herança
+	var base = new Action_Base();
+	start  = base.start
+	update = base.update
+	finish = base.finish
+	
+	
+	card = _card
+	target = _target
+	angle = _angle
 
-		start: function()
-		{
-			var this = self.card
-			
-			self.initial_pos = {x_pos: this.x, y_pos: this.y, rot: this.image_angle}
-			self.step = 0
-			
-			this.in_action = true
-			
-			this.target_x = self.target.x
-			this.target_y = self.target.y
-			
-			this.target_rot = self.angle
-		},
+	step = 0
 
-		update: function()
+	// Overrides
+	start = function()
+	{
+		var this = card;
+
+		initial_pos = { 
+			x_pos: this.x, 
+			y_pos: this.y, 
+			rot: this.image_angle 
+		};
+
+		this.in_action = true;
+
+		this.target_x = target.x;
+		this.target_y = target.y;
+		this.target_rot = angle;
+	}
+
+	update = function()
+	{
+		var this = card;
+		this.depth = -100;
+
+		if (card_animation(this, this.target_x, this.target_y, this.target_rot, 15 - step * 5))
 		{
-			var this = self.card
-			
-			this.depth = -100
-			
-			if (card_animation(this, this.target_x, this.target_y, this.target_rot, 20))
+			if (step == 0)
 			{
-				if (self.step == 0)
-				{
-					self.target.life -= self.card.attack // tira a vida da carta
-					trigger_particle(spr_blood, self.target.x, self.target.y, irandom_range(10, 20))
-					
-					this.target_x = self.initial_pos.x_pos
-					this.target_y = self.initial_pos.y_pos
-					this.target_rot = self.initial_pos.rot
-					
-					self.step = 1
-				}
-				else if (self.step == 1)
-					this.in_action = false
-			}
-			
-			
-		    return this.in_action;
-		},
+				target.life -= card.attack;
+				trigger_particle(spr_blood, target.x, target.y, irandom_range(20, 30));
 
-		finish: function()
-		{
-			show_debug_message("")
+				this.target_x = initial_pos.x_pos;
+				this.target_y = initial_pos.y_pos;
+				this.target_rot = initial_pos.rot;
+
+				step = 1;
+			}
+			else
+			{
+				this.in_action = false;
+			}
 		}
+
+		return this.in_action;
 	}
 }

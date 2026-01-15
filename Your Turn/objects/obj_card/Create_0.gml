@@ -28,6 +28,7 @@ target_x = target_x ?? x
 target_y = target_y ?? y
 target_rot = target_rot ?? image_angle
 
+selected = false
 dragging = false
 
 in_action = false

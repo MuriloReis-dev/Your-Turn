@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_Action_attack",
+  "%Name":"scr_Action_base",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_Action_attack",
+  "name":"scr_Action_base",
   "parent":{
     "name":"Actions",
     "path":"folders/Constructors/Actions.yy",

@@ -1,3 +1,6 @@
+/// @description Pega posições adjacentes à posição verificada em uma array bidimensional que representa um grid [linha, coluna]
+/// @param row Linha da posição verificada
+/// @param col Coluna da posição verificada
 function get_adjacent_slots(row, col)
 {
     var result = [];

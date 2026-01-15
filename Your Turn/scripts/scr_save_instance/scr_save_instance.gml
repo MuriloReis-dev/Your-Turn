@@ -1,5 +1,5 @@
-///@description Salva a instância atual em uma array e retorna seu index
-///@param array A array na qual a instância será guardada
+/// @description Salva a instância atual em uma array e retorna seu index
+/// @param array A array na qual a instância será guardada
 function save_instance(array)
 {
 	array_push(array, id)

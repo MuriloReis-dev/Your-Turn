@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_Action_attack",
+  "%Name":"scr_Action_group",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_Action_attack",
+  "name":"scr_Action_group",
   "parent":{
-    "name":"Actions",
-    "path":"folders/Constructors/Actions.yy",
+    "name":"Constructors",
+    "path":"folders/Constructors.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

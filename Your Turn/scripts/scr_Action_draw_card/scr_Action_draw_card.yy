@@ -6,7 +6,7 @@
   "name":"scr_Action_draw_card",
   "parent":{
     "name":"Actions",
-    "path":"folders/Scripts/Actions.yy",
+    "path":"folders/Constructors/Actions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
