@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_PageElement",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_PageElement",
+  "parent":{
+    "name":"Constructors",
+    "path":"folders/Constructors.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

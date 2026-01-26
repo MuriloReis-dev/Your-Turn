@@ -1,10 +1,7 @@
-global.lock_controls = true
+sprite = noone
 
-if (reverse)
-	image_index = image_number - 1
+target_room = room
 
-if (target_room == noone)
-	target_room = room
+transition_frame = 0
 
-depth = -2000
-
+active = false

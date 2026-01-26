@@ -1,3 +1,5 @@
+global.game_state = GAME_STATE.CUTSCENE
+
 #region Globais
 
 global.draggable_instances = [] // array que guarda instâncias arrastáveis
@@ -8,8 +10,6 @@ global.deck = {x_pos: 2010, y_pos: 540}
 
 global.player_hand = []
 global.opponent_hand = []
-
-global.lock_controls = true // bloqueia controles
 
 #endregion
 
@@ -83,7 +83,7 @@ for (var i = 0; i < hand_length[0]; i ++)
 }
 
 // desbloqueia controles ao comprar todas as cartas
-ds_queue_enqueue(fila, create_action(function(){ global.lock_controls = false }))
+ds_queue_enqueue(fila, create_action(function(){ global.game_state = GAME_STATE.PLAYING }))
 
 // inicia fila de ações
 array_push(global.action_groups, new Action_group(fila))

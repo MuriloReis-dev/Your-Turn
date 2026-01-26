@@ -20,4 +20,4 @@ switch (lightning_force)
 image_index = 0
 image_speed = 0
 
-depth = -100
+draw_enable_drawevent(true);
