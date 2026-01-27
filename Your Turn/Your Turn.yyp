@@ -38,6 +38,7 @@
   },
   "name":"Your Turn",
   "resources":[
+    {"id":{"name":"fnt_Arial_bold","path":"fonts/fnt_Arial_bold/fnt_Arial_bold.yy",},},
     {"id":{"name":"fnt_Arial","path":"fonts/fnt_Arial/fnt_Arial.yy",},},
     {"id":{"name":"obj_card_slot","path":"objects/obj_card_slot/obj_card_slot.yy",},},
     {"id":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},},
@@ -67,6 +68,7 @@
     {"id":{"name":"scr_get_inst_on_top","path":"scripts/scr_get_inst_on_top/scr_get_inst_on_top.yy",},},
     {"id":{"name":"scr_PageElement","path":"scripts/scr_PageElement/scr_PageElement.yy",},},
     {"id":{"name":"scr_save_instance","path":"scripts/scr_save_instance/scr_save_instance.yy",},},
+    {"id":{"name":"scr_text_break","path":"scripts/scr_text_break/scr_text_break.yy",},},
     {"id":{"name":"scr_trigger_particle","path":"scripts/scr_trigger_particle/scr_trigger_particle.yy",},},
     {"id":{"name":"snd_rain","path":"sounds/snd_rain/snd_rain.yy",},},
     {"id":{"name":"snd_thunder_1","path":"sounds/snd_thunder_1/snd_thunder_1.yy",},},

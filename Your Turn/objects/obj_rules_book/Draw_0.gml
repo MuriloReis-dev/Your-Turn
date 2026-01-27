@@ -125,68 +125,54 @@ if (current_pages[1] <= array_length(pages) - 1)
 #region Conteúdo
 draw_set_colour(c_black)
 
-// Esquerda
-if (current_pages[0] >= 0 && current_pages[0] <= array_length(pages) - 1)
+// executa para as páginas atuais
+for (var i = 0; i < array_length(current_pages); i++)
 {
-	var txt_x = x - page_w + margin + padding
-	var txt_y = y - page_h / 2 + margin + padding
-	
-	for (var i = 0; i < array_length(pages[current_pages[0]]); i++)
+	if (current_pages[i] >= 0 && current_pages[i] <= array_length(pages) - 1)
 	{
-		var el = pages[current_pages[0]][i]
-		if (el.type == PAGE_EL_TYPE.TEXT)
-		{
-			draw_set_font(el.font)
-			
-			draw_text_ext(txt_x, txt_y, el.text, line_space, page_w - 2 * (margin + padding))
-			
-			// coloca o cursor abaixo do texto
-			txt_y += string_height_ext(el.text, line_space, page_w - 2 * (margin + padding))
-		}
-		if (el.type == PAGE_EL_TYPE.IMAGE)
-		{
-			draw_sprite_stretched(el.image, 0, txt_x, txt_y, el.w, el.h)
-			
-			txt_y += el.h
-		}
-		
-		//txt_y += font_get_size(draw_get_font()) / 2 // corrige espaçamento pelo tamanho da fonte
-		
-		// começa novo parágrafo
-		if (el.lbreak) txt_y += paragraph_space - line_space
-	}
-	draw_text(txt_x, txt_y, current_pages[0])
-}
-
-// Direita
-if (current_pages[1] >= 0 && current_pages[1] <= array_length(pages) - 1)
-{
-	var txt_x = x + margin + padding
-	var txt_y = y - page_h / 2 + margin + padding
+		var txt_x = x + (page_w * (i - 1)) + margin + padding
+		var txt_y = y - page_h / 2 + margin + padding
 	
-	for (var i = 0; i < array_length(pages[current_pages[1]]); i++)
-	{
-		var el = pages[current_pages[1]][i]
-		if (el.type == PAGE_EL_TYPE.TEXT)
+		// Executa para cada elemento da página
+		for (var e = 0; e < array_length(pages[current_pages[i]]); e++)
 		{
-			draw_set_font(el.font)
+			var el = pages[current_pages[i]][e]
 			
-			draw_text_ext(txt_x, txt_y, el.text, line_space, page_w - 2 * (margin + padding))
+			// TEXTO
+			if (el.type == PAGE_EL_TYPE.TEXT)
+			{
+				draw_set_font(el.font)
+				
+				// divide linhas do texto
+				var texto = text_break(el.text, page_w - (txt_x - (x + (page_w * (i - 1)) + margin + padding)))
+				// escreve cada linha
+				for (var l = 0; l < array_length(texto); l++)
+				{
+					draw_text(txt_x, txt_y, texto[l]) // escreve linha
+					
+					// vai para próxima linha
+					txt_y += line_space
+				}
+				
+				txt_x += string_width(array_last(texto))
+				txt_y -= line_space
+			}
 			
-			// coloca o cursor abaixo do texto
-			txt_y += string_height_ext(el.text, line_space, page_w - 2 * (margin + padding))
-		}
-		if (el.type == PAGE_EL_TYPE.IMAGE)
-		{
-			draw_sprite_stretched(el.image, 0, txt_x, txt_y, el.w, el.h)
+			// IMAGEM
+			if (el.type == PAGE_EL_TYPE.IMAGE)
+			{
+				draw_sprite_stretched(el.image, 0, txt_x, txt_y, el.w, el.h)
 			
-			txt_y += el.h
-		}
+				txt_y += el.h
+			}
 		
-		//txt_y += font_get_size(draw_get_font()) / 2 // corrige espaçamento pelo tamanho da fonte
-		
-		// começa novo parágrafo
-		if (el.lbreak) txt_y += paragraph_space - line_space
+			// começa novo parágrafo
+			if (el.lbreak)
+			{
+				txt_x = x + (page_w * (i - 1)) + margin + padding
+				txt_y += paragraph_space
+			}
+		}
 	}
 }
 

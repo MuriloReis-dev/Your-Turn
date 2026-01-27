@@ -17,13 +17,14 @@ paragraph_space = 32
 	Página *tamanho do livro* + 1: contracapa (fora)
 */
 
-current_pages = [-3, -2]
+current_pages = [-1, 0]
 
 pages = [
 	[
+	new PageElementText("Primeiro Teste Primeiro ", fnt_Arial, false),
+	new PageElementText("BOOOLD ", fnt_Arial_bold, false),
 	new PageElementText("Primeiro Teste Primeiro", fnt_Arial),
-	new PageElementText("Teste Segundo Teste Segundo Teste Segundo Teste Segundo Teste Segundo Teste Segundo Teste Segundo Teste Segundo ", fnt_Arial),
-	new PageElementImage(spr_card_player, 200, 200),
+	new PageElementImage(spr_card_player, 200, 200, false),
 	new PageElementImage(spr_background_room, 500, 200),
 	new PageElementText("Primeiro Teste Primeiro", fnt_Arial)
 	],
