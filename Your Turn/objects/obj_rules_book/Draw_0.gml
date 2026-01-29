@@ -18,7 +18,7 @@ draw_rectangle_colour(
 	display_get_gui_width(),
 	display_get_gui_height(),
 	c_black,
-	c_maroon,
+	c_orange,
 	c_black,
 	c_black,
 	false);
@@ -130,8 +130,10 @@ for (var i = 0; i < array_length(current_pages); i++)
 {
 	if (current_pages[i] >= 0 && current_pages[i] <= array_length(pages) - 1)
 	{
-		var txt_x = x + (page_w * (i - 1)) + margin + padding
-		var txt_y = y - page_h / 2 + margin + padding
+		//var txt_x = x + (page_w * (i - 1)) + margin + padding
+		var txt_x = margin + padding
+		//var txt_y = y - page_h / 2 + margin + padding
+		var txt_y = margin + padding
 	
 		// Executa para cada elemento da página
 		for (var e = 0; e < array_length(pages[current_pages[i]]); e++)
@@ -144,32 +146,50 @@ for (var i = 0; i < array_length(current_pages); i++)
 				draw_set_font(el.font)
 				
 				// divide linhas do texto
-				var texto = text_break(el.text, page_w - (txt_x - (x + (page_w * (i - 1)) + margin + padding)))
+				var texto = text_break(el.text, page_w - txt_x - (margin + padding))
 				// escreve cada linha
 				for (var l = 0; l < array_length(texto); l++)
 				{
-					draw_text(txt_x, txt_y, texto[l]) // escreve linha
+					// escreve linha
+					draw_text(
+						x + (page_w * (i - 1)) + txt_x,
+						y - page_h / 2 + txt_y,
+						texto[l])
 					
 					// vai para próxima linha
-					txt_y += line_space
+					if (l < array_length(texto) - 1)
+					{
+						txt_x = margin + padding
+						txt_y += line_space
+					}
 				}
 				
 				txt_x += string_width(array_last(texto))
-				txt_y -= line_space
 			}
 			
 			// IMAGEM
 			if (el.type == PAGE_EL_TYPE.IMAGE)
 			{
-				draw_sprite_stretched(el.image, 0, txt_x, txt_y, el.w, el.h)
+				// desenha a imagem
+				draw_sprite_stretched(
+					el.image,
+					0,
+					x + (page_w * (i - 1)) + txt_x,
+					y - page_h / 2 + txt_y,
+					el.w,
+					el.h)
 			
-				txt_y += el.h
+				
+				if (el.lbreak)
+					txt_y += el.h
+				else
+					txt_x += el.w
 			}
 		
 			// começa novo parágrafo
 			if (el.lbreak)
 			{
-				txt_x = x + (page_w * (i - 1)) + margin + padding
+				txt_x = + margin + padding
 				txt_y += paragraph_space
 			}
 		}

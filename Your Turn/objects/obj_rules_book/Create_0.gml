@@ -24,9 +24,9 @@ pages = [
 	new PageElementText("Primeiro Teste Primeiro ", fnt_Arial, false),
 	new PageElementText("BOOOLD ", fnt_Arial_bold, false),
 	new PageElementText("Primeiro Teste Primeiro", fnt_Arial),
-	new PageElementImage(spr_card_player, 200, 200, false),
-	new PageElementImage(spr_background_room, 500, 200),
-	new PageElementText("Primeiro Teste Primeiro", fnt_Arial)
+	new PageElementImage(spr_card_player, 200, 200),
+	new PageElementImage(spr_background_room, 350, 200, false),
+	new PageElementText("Primeiro Teste Primeiro Primeiro Teste Primeiro Primeiro Teste Primeiro Primeiro Teste Primeiro Primeiro Teste Primeiro Primeiro Teste Primeiro Primeiro Teste Primeiro Primeiro Teste Primeiro Teste Primeiro Teste Primeiro Teste Primeiro Teste Primeiro Teste Primeiro Teste Primeiro Teste Primeiro Teste Primeiro Teste Primeiro Teste Primeiro Teste Primeiro ", fnt_Arial)
 	],
 	[
 	new PageElementText("Primeiro Teste Primeiro", fnt_Arial),
