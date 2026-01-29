@@ -130,69 +130,109 @@ for (var i = 0; i < array_length(current_pages); i++)
 {
 	if (current_pages[i] >= 0 && current_pages[i] <= array_length(pages) - 1)
 	{
-		//var txt_x = x + (page_w * (i - 1)) + margin + padding
+		var page = pages[current_pages[i]]
+		
 		var txt_x = margin + padding
-		//var txt_y = y - page_h / 2 + margin + padding
 		var txt_y = margin + padding
-	
-		// Executa para cada elemento da página
-		for (var e = 0; e < array_length(pages[current_pages[i]]); e++)
+		
+		#region Desenha o título
+		if (string_length(page.title) > 0)
 		{
-			var el = pages[current_pages[i]][e]
+			draw_set_font(fnt_Title)
+			
+			txt_x = (page_w - string_width(page.title)) / 2
+			
+			draw_text(
+				x + (page_w * (i - 1)) + txt_x,
+				y - page_h / 2 + txt_y,
+				page.title)
+			
+			// vai para próxima linha
+			txt_x = margin + padding
+			txt_y += paragraph_space
+		}
+		#endregion
+	
+		#region Desenha os elementos da página
+		for (var e = 0; e < array_length(page.content); e++)
+		{
+			var content = page.content[e]
 			
 			// TEXTO
-			if (el.type == PAGE_EL_TYPE.TEXT)
+			if (content.type == PAGE_EL_TYPE.TEXT)
 			{
-				draw_set_font(el.font)
+				draw_set_font(content.font)
 				
-				// divide linhas do texto
-				var texto = text_break(el.text, page_w - txt_x - (margin + padding))
-				// escreve cada linha
-				for (var l = 0; l < array_length(texto); l++)
+				var rest = content.text
+				while (string_length(rest) > 0)
 				{
+					// quebra o texto
+					var splited = text_break(rest, page_w - txt_x - (margin + padding))
+					
+					// separa a linha do resto
+					var line = splited[0]
+					rest = splited[1]
+					
 					// escreve linha
 					draw_text(
 						x + (page_w * (i - 1)) + txt_x,
 						y - page_h / 2 + txt_y,
-						texto[l])
+						line)
 					
+					// move cursor
+					txt_x += string_width(line)
+						
 					// vai para próxima linha
-					if (l < array_length(texto) - 1)
+					if (string_length(rest) > 0)
 					{
 						txt_x = margin + padding
 						txt_y += line_space
 					}
 				}
-				
-				txt_x += string_width(array_last(texto))
 			}
 			
 			// IMAGEM
-			if (el.type == PAGE_EL_TYPE.IMAGE)
+			if (content.type == PAGE_EL_TYPE.IMAGE)
 			{
 				// desenha a imagem
 				draw_sprite_stretched(
-					el.image,
+					content.image,
 					0,
 					x + (page_w * (i - 1)) + txt_x,
 					y - page_h / 2 + txt_y,
-					el.w,
-					el.h)
+					content.w,
+					content.h)
 			
 				
-				if (el.lbreak)
-					txt_y += el.h
+				if (content.lbreak)
+					txt_y += content.h
 				else
-					txt_x += el.w
+					txt_x += content.w
 			}
 		
 			// começa novo parágrafo
-			if (el.lbreak)
+			if (content.lbreak)
 			{
 				txt_x = + margin + padding
 				txt_y += paragraph_space
 			}
 		}
+		#endregion
+		
+		#region Desenha o Rodapé
+		if (string_length(page.baseboard) > 0)
+		{
+			draw_set_font(fnt_Arial_bold)
+			
+			txt_x = i == 0 ? margin + padding : page_w - (margin + padding) - string_width(page.baseboard)
+			txt_y = page_h - (margin + padding) - string_height(page.baseboard)
+			
+			draw_text(
+				x + (page_w * (i - 1)) + txt_x,
+				y - page_h / 2 + txt_y,
+				page.baseboard)
+		}
+		#endregion
 	}
 }
 

@@ -40,6 +40,7 @@
   "resources":[
     {"id":{"name":"fnt_Arial_bold","path":"fonts/fnt_Arial_bold/fnt_Arial_bold.yy",},},
     {"id":{"name":"fnt_Arial","path":"fonts/fnt_Arial/fnt_Arial.yy",},},
+    {"id":{"name":"fnt_Title","path":"fonts/fnt_Title/fnt_Title.yy",},},
     {"id":{"name":"obj_card_slot","path":"objects/obj_card_slot/obj_card_slot.yy",},},
     {"id":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},},
     {"id":{"name":"obj_game_controller","path":"objects/obj_game_controller/obj_game_controller.yy",},},
@@ -66,6 +67,7 @@
     {"id":{"name":"scr_create_action","path":"scripts/scr_create_action/scr_create_action.yy",},},
     {"id":{"name":"scr_get_adjacent_slots","path":"scripts/scr_get_adjacent_slots/scr_get_adjacent_slots.yy",},},
     {"id":{"name":"scr_get_inst_on_top","path":"scripts/scr_get_inst_on_top/scr_get_inst_on_top.yy",},},
+    {"id":{"name":"scr_Page","path":"scripts/scr_Page/scr_Page.yy",},},
     {"id":{"name":"scr_PageElement","path":"scripts/scr_PageElement/scr_PageElement.yy",},},
     {"id":{"name":"scr_save_instance","path":"scripts/scr_save_instance/scr_save_instance.yy",},},
     {"id":{"name":"scr_text_break","path":"scripts/scr_text_break/scr_text_break.yy",},},
