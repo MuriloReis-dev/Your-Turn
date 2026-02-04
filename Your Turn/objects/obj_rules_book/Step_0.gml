@@ -1,4 +1,4 @@
-if (!obj_game_controller.context.interact) exit
+if (!visible) exit
 
 if (keyboard_check_pressed(vk_right))
 {

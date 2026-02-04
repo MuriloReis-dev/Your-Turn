@@ -27,13 +27,13 @@ var sprite = sprite_index
 var frame = image_index
 
 
-if (owner == obj_player)
+if (owner == OWNERS.PLAYER)
 {
 	text_color = #197B30
 	sprite = spr_card_player
 	frame = (on_slot && !played) ? 0 : 1
 }
-else if (owner == obj_opponent)
+else if (owner == OWNERS.OPPONENT)
 {
 	text_color = #9E0B0F
 	sprite = spr_card_opponent

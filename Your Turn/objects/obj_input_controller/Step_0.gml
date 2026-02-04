@@ -2,7 +2,6 @@
 #region Iniciar Turno
 if (keyboard_check_pressed(vk_enter))
 {
-	
 	var fila = ds_queue_create() // fila de ações de ataque
 	
 	for (var row = 0; row < array_length(global.board); row++)
@@ -77,8 +76,8 @@ if (input.confirm)
 
 if (input.rules_book)
 {
-	if (global.game_state == GAME_STATE.MENU)
-		global.game_state = GAME_STATE.WAITING
-	else
-		global.game_state = GAME_STATE.MENU
+	with (obj_rules_book)
+	{
+		visible = !visible
+	}
 }

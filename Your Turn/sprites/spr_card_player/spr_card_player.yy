@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"277c1c66-90a6-4538-aaae-4ff035b815f5","name":"277c1c66-90a6-4538-aaae-4ff035b815f5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"105fca45-165f-442b-8c10-eacb9fe6835a","name":"105fca45-165f-442b-8c10-eacb9fe6835a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"f80f63da-a266-4041-b578-ab84ecb280e3","name":"f80f63da-a266-4041-b578-ab84ecb280e3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"f183cb21-662e-4ede-b065-48951b309c56","name":"f183cb21-662e-4ede-b065-48951b309c56","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
@@ -72,8 +72,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"277c1c66-90a6-4538-aaae-4ff035b815f5","path":"sprites/spr_card_player/spr_card_player.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"e51d1774-c4e3-4bb3-85e0-3a3f1b6539f9","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"105fca45-165f-442b-8c10-eacb9fe6835a","path":"sprites/spr_card_player/spr_card_player.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"a800974d-1e5c-40fd-bddd-8d93f96464f0","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f80f63da-a266-4041-b578-ab84ecb280e3","path":"sprites/spr_card_player/spr_card_player.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"a88e3d2a-3357-432e-9a0e-de0078ecce02","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},

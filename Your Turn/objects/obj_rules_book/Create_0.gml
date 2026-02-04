@@ -7,9 +7,6 @@ padding = 5
 line_space = 24
 paragraph_space = 32
 
-//txt_x = x - sprite_get_width(page_spr) + margin + padding // define a posição atual do cursor no texto (x)
-//txt_y = y - sprite_get_height(page_spr) / 2 + margin + padding // define a posição atual do cursor no texto (y)
-
 /*
 	Página -2: capa (fora)
 	Página -1: capa (dentro)

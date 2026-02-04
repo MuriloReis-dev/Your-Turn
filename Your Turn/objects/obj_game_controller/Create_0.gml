@@ -1,5 +1,6 @@
 randomise()
 
+// Estados do jogo
 enum GAME_STATE
 {
 	WAITING,
@@ -7,14 +8,24 @@ enum GAME_STATE
 	CUTSCENE,
 	MENU
 }
+global.game_state = GAME_STATE.MENU // estado atual do jogo
 
-global.game_state = GAME_STATE.MENU
-
-
-context = {
-	drag: false, // arrastar objetos da cena
-	navigate: false, // navegar entre salas
-	interact: false // interagir com botões e menus
+// Especifíca uma relação de propriedade para instâncias
+enum OWNERS
+{
+	PLAYER,
+	OPPONENT
 }
+
+// Valores usados durante o jogo
+enum STATS
+{
+	ENERGY,
+	MOVES,
+	BEANS
+}
+
+global.player_stats = {energy: 6, moves: 2, beans: 5}
+global.opponent_stats = {energy: 3, moves: 2, beans: 8}
 
 event_args = {} // variável temporária para definir argumentos ao executar um evento

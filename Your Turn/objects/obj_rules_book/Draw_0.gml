@@ -1,5 +1,3 @@
-if (global.game_state != GAME_STATE.MENU) exit;
-
 #region Variáveis
 
 var book_w = sprite_get_width(book_spr)
@@ -11,7 +9,7 @@ var page_h = sprite_get_height(page_spr)
 #endregion
 
 #region Fundo Escuro
-draw_set_alpha(0.6);
+draw_set_alpha(0.3);
 draw_rectangle_colour(
 	0,
 	0,

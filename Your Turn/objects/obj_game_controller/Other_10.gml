@@ -1,5 +1,5 @@
 /// @description Navega para outra sala
-if (!context.navigate) exit
+if (global.game_state == GAME_STATE.CUTSCENE) exit
 
 var trg_room = event_args.trg_room ?? undefined
 if (trg_room == undefined || trg_room == room) exit
